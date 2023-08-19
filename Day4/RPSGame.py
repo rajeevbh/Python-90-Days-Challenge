@@ -33,11 +33,9 @@ print(rock)
 print(paper)
 print(scissors)
 
-game_images = {rock,paper,scissors}
+game_images = [rock,paper,scissors]
 
 user_choice = int(input("Please enter your choice ? 0-Rock, 1-Paper, Scissors-2"))
-print("User Choice: ")
-print(game_images[user_choice])
 
 computer_choice = random.randint(0,2)
 print("Computer Choice: ")
@@ -45,9 +43,12 @@ print(game_images[computer_choice])
 
 if(user_choice >=3 or user_choice < 0):
     print("You typed a invaid number, you lose")
-elif (user_choice == 0 and computer_choice == 2):
+    exit()
+print("User Choice: ")
+print(game_images[user_choice])
+if (user_choice == 0 and computer_choice == 2):
     print("Congrats, You win !!")
-if (computer_choice == 0 and user_choice == 2):
+elif (computer_choice == 0 and user_choice == 2):
     print("You lose")
 elif (computer_choice > user_choice):
     print("You lose!!")
